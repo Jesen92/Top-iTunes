@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package org.example.Top10ItunesDownloads;
+package org.example.TopItunesDownloads;
 
 public final class R {
     public static final class attr {

@@ -1,4 +1,4 @@
-package org.example.Top10ItunesDownloads;
+package org.example.TopItunesDownloads;
 
 public class Application {
 	

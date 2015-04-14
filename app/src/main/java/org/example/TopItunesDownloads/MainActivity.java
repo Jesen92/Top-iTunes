@@ -1,4 +1,4 @@
-package org.example.Top10ItunesDownloads;
+package org.example.TopItunesDownloads;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -33,7 +33,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
         dropdown = (Spinner)findViewById(R.id.spinner1);
-        String[] items = new String[]{"Top 10 Free Apps","Top 10 Paid Apps","Top 10 Albums","Top 10 Songs","Top 10 Movies"};
+        String[] items = new String[]{"Top 25 Free Apps","Top 25 Paid Apps","Top 25 Albums","Top 25 Songs","Top 10 Movies"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, items);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dropdown.setAdapter(adapter);
@@ -48,7 +48,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
             }
         });
 		listApps = (ListView)findViewById(R.id.listApps);
-        new DownloadData().execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=10/xml");
+        new DownloadData().execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=25/xml");
 
 	}
 
@@ -76,21 +76,21 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 
         switch (position) {
             case 0:
-                new DownloadData().execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=10/xml");
+                new DownloadData().execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=25/xml");
                 //Log.d("MainActivity",xmlData);
                 Log.d("MainActivity","Free Apps");
                 break;
             case 1:
-                new DownloadData().execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/toppaidapplications/limit=10/xml");
+                new DownloadData().execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/toppaidapplications/limit=25/xml");
                 //Log.d("MainActivity",xmlData);
                 Log.d("MainActivity","Paid Apps");
                 break;
             case 2:
-                new DownloadData().execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topalbums/limit=10/xml");
+                new DownloadData().execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topalbums/limit=25/xml");
                 Log.d("MainActivity","Albums");
                 break;
             case 3:
-                new DownloadData().execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=10/xml");
+                new DownloadData().execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=25/xml");
                 Log.d("MainActivity","Songs");
                 break;
             case 4:

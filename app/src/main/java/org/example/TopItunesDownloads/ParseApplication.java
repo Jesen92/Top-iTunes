@@ -1,4 +1,4 @@
-package org.example.Top10ItunesDownloads;
+package org.example.TopItunesDownloads;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
